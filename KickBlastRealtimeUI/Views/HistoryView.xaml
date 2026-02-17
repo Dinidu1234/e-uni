@@ -1,0 +1,25 @@
+<UserControl x:Class="KickBlastRealtimeUI.Views.HistoryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+        <Border Grid.Row="0" Style="{StaticResource CardStyle}">
+            <StackPanel Orientation="Horizontal">
+                <ComboBox Width="220" Margin="6" ItemsSource="{Binding Athletes}" DisplayMemberPath="FullName" SelectedItem="{Binding SelectedAthlete}"/>
+                <TextBox Width="80" Margin="6" Text="{Binding SelectedMonth, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Width="100" Margin="6" Text="{Binding SelectedYear, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Style="{StaticResource CardStyle}">
+            <DataGrid ItemsSource="{Binding CalculationsView}" AutoGenerateColumns="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Athlete" Binding="{Binding Athlete.FullName}" Width="*"/>
+                    <DataGridTextColumn Header="Month" Binding="{Binding Month}" Width="80"/>
+                    <DataGridTextColumn Header="Year" Binding="{Binding Year}" Width="80"/>
+                    <DataGridTextColumn Header="Total" Binding="{Binding Total, StringFormat=LKR {0:N2}}" Width="150"/>
+                    <DataGridTextColumn Header="Created" Binding="{Binding CreatedAt, StringFormat=dd MMM yyyy HH:mm}" Width="180"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</UserControl>
