@@ -1,0 +1,12 @@
+<UserControl x:Class="KickBlastRealtimeUI.Views.DashboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <UniformGrid Rows="2" Columns="2" Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+            <Border Style="{StaticResource CardStyle}"><StackPanel><TextBlock Text="Total Athletes" FontWeight="SemiBold"/><TextBlock Text="{Binding TotalAthletes}" FontSize="28" Margin="0,8,0,0"/></StackPanel></Border>
+            <Border Style="{StaticResource CardStyle}"><StackPanel><TextBlock Text="Calculations This Month" FontWeight="SemiBold"/><TextBlock Text="{Binding CalculationsThisMonth}" FontSize="28" Margin="0,8,0,0"/></StackPanel></Border>
+            <Border Style="{StaticResource CardStyle}"><StackPanel><TextBlock Text="Total Revenue" FontWeight="SemiBold"/><TextBlock Text="{Binding TotalRevenueThisMonth}" FontSize="28" Margin="0,8,0,0"/></StackPanel></Border>
+            <Border Style="{StaticResource CardStyle}"><StackPanel><TextBlock Text="Next Competition Date" FontWeight="SemiBold"/><TextBlock Text="{Binding NextCompetitionDate}" FontSize="28" Margin="0,8,0,0"/></StackPanel></Border>
+        </UniformGrid>
+    </Grid>
+</UserControl>
